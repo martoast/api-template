@@ -91,6 +91,11 @@ echo -e "${GREEN}✓${NC} Template copied"
 # Navigate to new project
 cd "$PROJECT_PATH"
 
+# Remove any .git directory that may have been copied (ensure clean detach from template repo)
+rm -rf .git 2>/dev/null
+
+echo -e "${GREEN}✓${NC} Detached from template repository"
+
 # Create .env from example
 cp .env.example .env
 
